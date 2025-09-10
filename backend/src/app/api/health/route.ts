@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db, users } from '@/db';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // Test database connection
     await db().select().from(users).limit(1);
