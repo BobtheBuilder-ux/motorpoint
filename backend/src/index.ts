@@ -16,7 +16,13 @@ import { uploadRoutes } from './routes/upload';
 dotenv.config();
 
 const app = express();
-const PORT = parseInt(process.env.PORT || '3001', 10);
+const PORT = (() => {
+  const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3001;
+  if (isNaN(port) || port < 0 || port > 65535) {
+    return 3001;
+  }
+  return port;
+})();
 
 // Security middleware
 app.use(helmet());
