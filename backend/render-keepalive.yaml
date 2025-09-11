@@ -1,0 +1,14 @@
+services:
+  - type: worker
+    name: motortech-keepalive
+    env: node
+    plan: free
+    buildCommand: echo "No build required for keep-alive worker"
+    startCommand: node keep-alive.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+    autoDeploy: true
+    repo: https://github.com/BobtheBuilder-ux/motortech # Replace with your actual repo URL
+    branch: main
+    rootDir: backend

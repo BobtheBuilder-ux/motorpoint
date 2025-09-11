@@ -1,7 +1,7 @@
 {
-  "name": "express-backend",
-   "version": "1.0.0",
-  "description": "MotorTech Express Backend API",
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "MotorTech Backend API",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -11,6 +11,7 @@
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
+    "keep-alive": "node keep-alive.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
